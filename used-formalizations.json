@@ -1,0 +1,22 @@
+{
+  "reporting_paper_id": "smoke-import-evaluation",
+  "reporting_source_commit": "0000000000000000000000000000000000000000",
+  "reports": [
+    {
+      "target_paper_id": "smoke-import-paper",
+      "target_version": "v1a1",
+      "target_surface_module": "MetaLibrary.Papers.SmokeImportPaper.v1a1.Surface",
+      "outcome": "useful",
+      "imported": true,
+      "used_exported_items": [
+        "MetaLibrary.SmokeImportPaper.sampleVertexSet",
+        "MetaLibrary.SmokeImportPaper.sampleVertexSet_card",
+        "MetaLibrary.SmokeImportPaper.union_subset_union_right",
+        "MetaLibrary.SmokeImportPaper.sum_range_double"
+      ],
+      "missing_items": [],
+      "blocking_issues": [],
+      "notes": "The upstream smoke-test paper was pinned at commit 59645ae044a133a2e301fe74fe1fc82debff9a66 and was useful for testing downstream GitHub paper dependencies, selected mathlib imports, and reuse-feedback ingestion."
+    }
+  ]
+}

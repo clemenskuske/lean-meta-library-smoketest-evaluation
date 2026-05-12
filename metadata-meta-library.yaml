@@ -1,0 +1,132 @@
+paper_id: smoke-import-evaluation
+paper_title: "Synthetic Downstream Evaluation Of The Smoke-Test Paper"
+lean_namespace: SmokeImportEvaluation
+surface_file: Surface.lean
+root_import_file: SmokeImportEvaluation.lean
+source_repo_url: https://github.com/clemenskuske/lean-meta-library-smoketest-evaluation
+source_branch: main
+source_commit: 0000000000000000000000000000000000000000
+online_source: https://github.com/clemenskuske/lean-meta-library-smoketest-evaluation
+arxiv: ""
+doi: ""
+orcid: ""
+journal_or_conference: "Synthetic downstream smoke test repository"
+import_user_id: clemenskuske
+
+surface_usage_notes: >
+  This synthetic paper repository tests a second-paper import path. It depends
+  on the first smoke-test paper repository and selected mathlib modules, then
+  exports a small alias-only surface. Its optional reuse-feedback files evaluate
+  smoke-import-paper/v1a1 for downstream agent usability.
+
+exported_items:
+  - kind: definition
+    stable_lean_name: MetaLibrary.SmokeImportEvaluation.importedSampleCard
+    source_lean_name: SmokeImportEvaluation.Internal.importedSampleCard
+    paper_location: "Definition 2.1"
+    paper_statement: "The cardinality of the sample vertex set imported from the first smoke-test paper."
+    lean_statement: "importedSampleCard : Nat"
+    statement_dependencies:
+      - SmokeImportPaper.Internal.sampleVertexSet
+      - Finset.card
+    proof_dependencies: []
+    axiom_dependencies: []
+    search_text: "synthetic downstream smoke test imported sample vertex set cardinality"
+    verification_status: proved
+    notes: "Definition exported to show that a downstream paper can expose values built from an upstream paper package."
+  - kind: theorem
+    stable_lean_name: MetaLibrary.SmokeImportEvaluation.importedSampleCard_eq_three
+    source_lean_name: SmokeImportEvaluation.Internal.importedSampleCard_eq_three
+    paper_location: "Lemma 2.2"
+    paper_statement: "The imported sample cardinality is three."
+    lean_statement: "importedSampleCard = 3"
+    statement_dependencies:
+      - SmokeImportEvaluation.Internal.importedSampleCard
+      - SmokeImportPaper.Internal.sampleVertexSet_card
+    proof_dependencies:
+      - SmokeImportPaper.Internal.sampleVertexSet_card
+    axiom_dependencies: []
+    search_text: "synthetic downstream smoke test reuse cardinality theorem imported paper"
+    verification_status: proved
+    notes: "Direct reuse of the first smoketest paper's cardinality theorem."
+  - kind: theorem
+    stable_lean_name: MetaLibrary.SmokeImportEvaluation.imported_union_right_self
+    source_lean_name: SmokeImportEvaluation.Internal.imported_union_right_self
+    paper_location: "Lemma 2.3"
+    paper_statement: "The imported sample vertex set unioned with any right set is contained in itself."
+    lean_statement: "SmokeImportPaper.Internal.sampleVertexSet union right subset SmokeImportPaper.Internal.sampleVertexSet union right"
+    statement_dependencies:
+      - SmokeImportPaper.Internal.sampleVertexSet
+      - SmokeImportPaper.Internal.union_subset_union_right
+      - Finset.union
+    proof_dependencies:
+      - SmokeImportPaper.Internal.union_subset_union_right
+    axiom_dependencies: []
+    search_text: "synthetic downstream smoke test finite union subset reuse imported theorem"
+    verification_status: proved
+    notes: "Exercises an upstream theorem with an explicit downstream argument."
+  - kind: theorem
+    stable_lean_name: MetaLibrary.SmokeImportEvaluation.imported_sum_range_double_card
+    source_lean_name: SmokeImportEvaluation.Internal.imported_sum_range_double_card
+    paper_location: "Lemma 2.4"
+    paper_statement: "Doubling inside the finite range sum over the imported sample cardinality equals doubling the whole sum."
+    lean_statement: "(Finset.range importedSampleCard).sum (fun k => 2 * k) = 2 * (Finset.range importedSampleCard).sum id"
+    statement_dependencies:
+      - SmokeImportEvaluation.Internal.importedSampleCard
+      - SmokeImportPaper.Internal.sum_range_double
+      - Mathlib.Algebra.BigOperators.Ring.Finset
+      - Mathlib.Data.Finset.Range
+    proof_dependencies:
+      - SmokeImportPaper.Internal.sum_range_double
+    axiom_dependencies: []
+    search_text: "synthetic downstream smoke test finite sum range double imported theorem mathlib"
+    verification_status: proved
+    notes: "Uses an upstream big-operator theorem at an imported cardinality."
+  - kind: theorem
+    stable_lean_name: MetaLibrary.SmokeImportEvaluation.imported_doubled_card_sum_eq_six
+    source_lean_name: SmokeImportEvaluation.Internal.imported_doubled_card_sum_eq_six
+    paper_location: "Lemma 2.5"
+    paper_statement: "The doubled range sum over the imported sample cardinality evaluates to six."
+    lean_statement: "(Finset.range importedSampleCard).sum (fun k => 2 * k) = 6"
+    statement_dependencies:
+      - SmokeImportEvaluation.Internal.importedSampleCard
+      - SmokeImportEvaluation.Internal.importedSampleCard_eq_three
+      - SmokeImportEvaluation.Internal.imported_sum_range_double_card
+      - Mathlib.Data.Finset.Range
+    proof_dependencies:
+      - SmokeImportEvaluation.Internal.importedSampleCard_eq_three
+      - SmokeImportEvaluation.Internal.imported_sum_range_double_card
+      - native_decide
+    axiom_dependencies: []
+    search_text: "synthetic downstream smoke test imported cardinality finite sum evaluates six"
+    verification_status: proved
+    notes: "Combines upstream reuse with a small downstream computation."
+
+paper_statement_connections:
+  - paper_location: "Definition 2.1"
+    stable_lean_name: MetaLibrary.SmokeImportEvaluation.importedSampleCard
+    relation: "faithful"
+    caveats: "Synthetic downstream timing and feedback fixture, not a real mathematical paper."
+  - paper_location: "Lemma 2.2"
+    stable_lean_name: MetaLibrary.SmokeImportEvaluation.importedSampleCard_eq_three
+    relation: "faithful"
+    caveats: "Synthetic downstream timing and feedback fixture, not a real mathematical paper."
+  - paper_location: "Lemma 2.3"
+    stable_lean_name: MetaLibrary.SmokeImportEvaluation.imported_union_right_self
+    relation: "faithful"
+    caveats: "Synthetic downstream timing and feedback fixture, not a real mathematical paper."
+  - paper_location: "Lemma 2.4"
+    stable_lean_name: MetaLibrary.SmokeImportEvaluation.imported_sum_range_double_card
+    relation: "faithful"
+    caveats: "Synthetic downstream timing and feedback fixture, not a real mathematical paper."
+  - paper_location: "Lemma 2.5"
+    stable_lean_name: MetaLibrary.SmokeImportEvaluation.imported_doubled_card_sum_eq_six
+    relation: "faithful"
+    caveats: "Synthetic downstream timing and feedback fixture, not a real mathematical paper."
+
+optional_files:
+  hard_earned_lessons: hard-earned-lessons.md
+  used_formalizations: used-formalizations.json
+  used_formalization_lessons: used-formalization-lessons.md
+  quality_metadata: quality-metadata.json
+  token_usage_metadata: token-usage.json
