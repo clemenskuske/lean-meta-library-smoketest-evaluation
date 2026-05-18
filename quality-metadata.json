@@ -1,6 +1,0 @@
-{
-  "known_issues": [
-    "Synthetic repository, not a real paper formalization.",
-    "The metadata source_commit and reporting_source_commit fields are placeholders until a pinned GitHub commit is selected for import."
-  ]
-}
