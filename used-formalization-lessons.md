@@ -9,7 +9,8 @@ touch imported paper code and selected mathlib modules.
 
 ## What Worked
 
-- The root import `SmokeImportPaper` was sufficient for downstream Lean code.
+- Importing `SmokeImportPaper.Internal` directly was sufficient for downstream
+  Lean code.
 - The upstream repo's small, explicit mathlib imports made dependency behavior
   easy to reason about.
 - The exported theorem shapes were stable enough to reuse directly in short
@@ -25,8 +26,8 @@ touch imported paper code and selected mathlib modules.
   repo.
 - Reuse feedback targets the meta-library surface module
   `MetaLibrary.Papers.SmokeImportPaper.v1a1.Surface`, while the local paper repo
-  imports the upstream package module `SmokeImportPaper`. That distinction should
-  stay explicit in future documentation.
+  imports the upstream source module `SmokeImportPaper.Internal`. That
+  distinction should stay explicit in future documentation.
 
 ## Recommendation For Future Agents
 

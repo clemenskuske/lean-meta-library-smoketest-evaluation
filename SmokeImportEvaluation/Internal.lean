@@ -1,4 +1,4 @@
-import SmokeImportPaper
+import SmokeImportPaper.Internal
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.Data.Fin.Basic
 import Mathlib.Data.Finset.Range
@@ -12,7 +12,7 @@ def importedSampleCard : Nat :=
 
 theorem importedSampleCard_eq_three : importedSampleCard = 3 := by
   unfold importedSampleCard
-  exact SmokeImportPaper.Internal.sampleVertexSet_card
+  decide
 
 theorem imported_union_right_self (right : Finset (Fin 5)) :
     SmokeImportPaper.Internal.sampleVertexSet ∪ right ⊆
@@ -31,6 +31,6 @@ theorem imported_sum_range_double_card :
 theorem imported_doubled_card_sum_eq_six :
     (Finset.range importedSampleCard).sum (fun k => 2 * k) = 6 := by
   rw [imported_sum_range_double_card, importedSampleCard_eq_three]
-  native_decide
+  decide
 
 end SmokeImportEvaluation.Internal

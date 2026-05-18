@@ -1,5 +1,8 @@
 # Synthetic Smoke-Test Evaluation Paper
 
+> Synthetic fixture, not a real reusable paper surface. This file exists to
+> exercise downstream import and feedback mechanics.
+
 ## Import
 
 ```lean

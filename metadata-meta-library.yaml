@@ -2,7 +2,6 @@ paper_id: smoke-import-evaluation
 paper_title: "Synthetic Downstream Evaluation Of The Smoke-Test Paper"
 lean_namespace: SmokeImportEvaluation
 surface_file: Surface.lean
-root_import_file: SmokeImportEvaluation.lean
 source_repo_url: https://github.com/clemenskuske/lean-meta-library-smoketest-evaluation
 source_branch: main
 source_commit: 0000000000000000000000000000000000000000
@@ -30,7 +29,10 @@ exported_items:
       - SmokeImportPaper.Internal.sampleVertexSet
       - Finset.card
     proof_dependencies: []
-    axiom_dependencies: []
+    axiom_dependencies:
+      - Classical.choice
+      - propext
+      - Quot.sound
     search_text: "synthetic downstream smoke test imported sample vertex set cardinality"
     verification_status: proved
     notes: "Definition exported to show that a downstream paper can expose values built from an upstream paper package."
@@ -42,10 +44,12 @@ exported_items:
     lean_statement: "importedSampleCard = 3"
     statement_dependencies:
       - SmokeImportEvaluation.Internal.importedSampleCard
-      - SmokeImportPaper.Internal.sampleVertexSet_card
     proof_dependencies:
-      - SmokeImportPaper.Internal.sampleVertexSet_card
-    axiom_dependencies: []
+      - decide
+    axiom_dependencies:
+      - Classical.choice
+      - propext
+      - Quot.sound
     search_text: "synthetic downstream smoke test reuse cardinality theorem imported paper"
     verification_status: proved
     notes: "Direct reuse of the first smoketest paper's cardinality theorem."
@@ -61,7 +65,10 @@ exported_items:
       - Finset.union
     proof_dependencies:
       - SmokeImportPaper.Internal.union_subset_union_right
-    axiom_dependencies: []
+    axiom_dependencies:
+      - Classical.choice
+      - propext
+      - Quot.sound
     search_text: "synthetic downstream smoke test finite union subset reuse imported theorem"
     verification_status: proved
     notes: "Exercises an upstream theorem with an explicit downstream argument."
@@ -78,7 +85,10 @@ exported_items:
       - Mathlib.Data.Finset.Range
     proof_dependencies:
       - SmokeImportPaper.Internal.sum_range_double
-    axiom_dependencies: []
+    axiom_dependencies:
+      - Classical.choice
+      - propext
+      - Quot.sound
     search_text: "synthetic downstream smoke test finite sum range double imported theorem mathlib"
     verification_status: proved
     notes: "Uses an upstream big-operator theorem at an imported cardinality."
@@ -96,8 +106,11 @@ exported_items:
     proof_dependencies:
       - SmokeImportEvaluation.Internal.importedSampleCard_eq_three
       - SmokeImportEvaluation.Internal.imported_sum_range_double_card
-      - native_decide
-    axiom_dependencies: []
+      - decide
+    axiom_dependencies:
+      - Classical.choice
+      - propext
+      - Quot.sound
     search_text: "synthetic downstream smoke test imported cardinality finite sum evaluates six"
     verification_status: proved
     notes: "Combines upstream reuse with a small downstream computation."

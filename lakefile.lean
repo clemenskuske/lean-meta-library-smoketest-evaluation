@@ -12,3 +12,4 @@ require «smoke_import_paper» from git
 
 @[default_target]
 lean_lib SmokeImportEvaluation where
+  roots := #[`SmokeImportEvaluation.Internal]

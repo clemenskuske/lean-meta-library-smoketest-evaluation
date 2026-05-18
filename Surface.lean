@@ -1,4 +1,4 @@
-import SmokeImportEvaluation
+import SmokeImportEvaluation.Internal
 
 namespace MetaLibrary.SmokeImportEvaluation
 

@@ -1,5 +1,9 @@
 # Lean Meta-library Smoke-Test Evaluation Paper
 
+> Synthetic fixture, not a model mathematical contribution. Use this repository
+> to test downstream reuse, feedback ingestion, and commands; do not copy its
+> theorem scope or proof style as guidance for a real paper formalization.
+
 This is a second synthetic public paper repository for testing the
 `clemenskuske/lean-meta-library` import workflow.
 
