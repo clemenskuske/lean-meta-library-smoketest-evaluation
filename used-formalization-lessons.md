@@ -1,6 +1,6 @@
 # Used Formalization Lessons
 
-## Target: smoke-import-paper v1a1
+## Target: synthetic-mathlib-import-smoke-test v1a1
 
 The first smoketest repo was useful as a tiny upstream paper dependency. Its
 definition `sampleVertexSet`, cardinality theorem, finite-union monotonicity
@@ -31,7 +31,7 @@ touch imported paper code and selected mathlib modules.
 
 ## Recommendation For Future Agents
 
-Use `smoke-import-paper/v1a1` as a dependency smoke test rather than as a source
+Use `synthetic-mathlib-import-smoke-test/v1a1` as a dependency smoke test rather than as a source
 of serious graph theory. It is best for checking Lake/GitHub dependency
 resolution, import surfaces, alias-only exports, and downstream feedback
 plumbing.

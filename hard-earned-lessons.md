@@ -16,7 +16,7 @@ surface for the meta-library.
 ## Separate New Lessons From Reuse Feedback
 
 The lessons in this file describe this repository's own design choices. The
-feedback about `smoke-import-paper/v1a1` lives in `used-formalizations.json` and
+feedback about `synthetic-mathlib-import-smoke-test/v1a1` lives in `used-formalizations.json` and
 `used-formalization-lessons.md`, because the importer merges those files into
 the older version's downstream feedback.
 

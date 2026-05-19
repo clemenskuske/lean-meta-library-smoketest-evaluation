@@ -15,7 +15,7 @@ surface_usage_notes: >
   This synthetic paper repository tests a second-paper import path. It depends
   on the first smoke-test paper repository and selected mathlib modules, then
   exports a small alias-only surface. Its optional reuse-feedback files evaluate
-  smoke-import-paper/v1a1 for downstream agent usability.
+  synthetic-mathlib-import-smoke-test/v1a1 for downstream agent usability.
 
 exported_items:
   - kind: definition

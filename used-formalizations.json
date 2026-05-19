@@ -2,7 +2,7 @@
   "reporting_source_commit": "0000000000000000000000000000000000000000",
   "reports": [
     {
-      "target_paper_id": "smoke-import-paper",
+      "target_paper_id": "synthetic-mathlib-import-smoke-test",
       "target_version": "v1a1",
       "target_surface_module": "Papers.SmokeImportPaper.v1a1.Surface",
       "outcome": "useful",
