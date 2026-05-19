@@ -7,7 +7,7 @@ package «smoke_import_evaluation» where
 require mathlib from git
   "https://github.com/leanprover-community/mathlib4" @ "022e5828a80e427b66ca1c20f4841fff435fb18c"
 
-require «smoke_import_paper» from git
+require meta_library_synthetic_mathlib_import_smoke_test_v1a1 from git
   "https://github.com/clemenskuske/lean-meta-library-smoketest-paper.git" @ "59645ae044a133a2e301fe74fe1fc82debff9a66"
 
 @[default_target]

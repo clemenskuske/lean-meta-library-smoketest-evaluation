@@ -7,7 +7,7 @@
    "subDir": null,
    "scope": "",
    "rev": "59645ae044a133a2e301fe74fe1fc82debff9a66",
-   "name": "smoke_import_paper",
+   "name": "meta_library_synthetic_mathlib_import_smoke_test_v1a1",
    "manifestFile": "lake-manifest.json",
    "inputRev": "59645ae044a133a2e301fe74fe1fc82debff9a66",
    "inherited": false,
